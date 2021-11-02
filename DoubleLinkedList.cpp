@@ -30,7 +30,15 @@ void DoubleLinkedList::insert(int value) {
 
 }
 void DoubleLinkedList::merge(DoubleLinkedList* absorbedList) {
-
+	node* nodePtr = new node;
+	nodePtr = head;
+	while (nodePtr->next) {
+		nodePtr = nodePtr->next;
+	}
+	absorbedList->head->prev = nodePtr;
+	nodePtr->next = absorbedList->head;
+	
+	
 }
 void DoubleLinkedList::remove(int value) {
 
