@@ -41,11 +41,33 @@ void DoubleLinkedList::merge(DoubleLinkedList* absorbedList) {
 	
 }
 void DoubleLinkedList::remove(int value) {
-
+	node* nodePtr = new node;
+	nodePtr = head;
+	for (int i = 0; i < getCount() + 1; i++) {
+		if (nodePtr->data == value) {
+			nodePtr->prev->next = nodePtr->next;
+		}
+		if (i == getCount() + 1) {
+			nodePtr->next = nullptr;
+		}
+		nodePtr = nodePtr->next;
+		
+	}
 }
-//const int& DoubleLinkedList::operator[](int index) const {
-
-//}
+const int& DoubleLinkedList::operator[](int index) const {
+	node* nodePtr = new node;
+	nodePtr = head;
+	if (index > getCount()) {
+		throw IndexOutOfBounds();
+	}
+	else {
+		int i = 0;
+		while (i != index && nodePtr->next) {
+			nodePtr = nodePtr->next;
+		}
+		return nodePtr->data;
+	}
+}
 int DoubleLinkedList::getCount() const {
 	node* nodePtr = new node;
 	nodePtr = head;

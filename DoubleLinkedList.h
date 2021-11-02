@@ -20,7 +20,7 @@ public:
 	void insert(int value);
 	void merge(DoubleLinkedList* absorbedList);
 	void remove(int value);
-	//const int& operator[](int index) const;
+	const int& operator[](int index) const;
 	int getCount() const;
 	void display(bool reverse) const;
 
