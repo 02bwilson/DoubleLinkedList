@@ -40,6 +40,7 @@ void DoubleLinkedList::merge(DoubleLinkedList* absorbedList) {
 	
 	
 }
+
 void DoubleLinkedList::remove(int value) {
 	node* nodePtr = new node;
 	nodePtr = head;
@@ -54,6 +55,7 @@ void DoubleLinkedList::remove(int value) {
 		
 	}
 }
+
 const int& DoubleLinkedList::operator[](int index) const {
 	node* nodePtr = new node;
 	nodePtr = head;
@@ -68,6 +70,7 @@ const int& DoubleLinkedList::operator[](int index) const {
 		return nodePtr->data;
 	}
 }
+
 int DoubleLinkedList::getCount() const {
 	node* nodePtr = new node;
 	nodePtr = head;
@@ -78,6 +81,7 @@ int DoubleLinkedList::getCount() const {
 	}
 	return count;
 }
+
 void DoubleLinkedList::display(bool reverse) const {
 	if (!reverse) {
 		node* nodePtr = new node;
