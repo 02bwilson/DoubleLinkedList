@@ -21,8 +21,8 @@ int main() {
 
 	// Inserting some new values
 	newList->insert(3);
-	newList->insert(4);
 	newList->insert(5);
+	newList->insert(4);
 
 	// Merging the second list into the first list
 	List->merge(newList);
@@ -50,11 +50,11 @@ int main() {
 	cout << endl;
 
 	// Getting the value at index 2
-	// :/ 
 
 	cout << List->operator[](2);
 
-
+	// Oh no! (index out of bounds)
+	// cout << List->operator[](3);
 	
 
 

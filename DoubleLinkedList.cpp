@@ -12,21 +12,34 @@ void DoubleLinkedList::insert(int value) {
 	newNode->data = value;
 	newNode->next = nullptr; 
 
-	
+	node* nodePtr = new node;
+	nodePtr = head;
 
 	if (!head) {
+		head = newNode;
 		newNode->prev = nullptr;
+	}
+	else if (head->data >= newNode->data) {
+		newNode->next = head;
+		newNode->next->prev = newNode;
 		head = newNode;
 	}
+	
 	else {
-		node* nodePtr = new node;
-		nodePtr = head; 
-		while (nodePtr->next) {
+	while (nodePtr->next && nodePtr->next->data < newNode->data)
 			nodePtr = nodePtr->next;
+			newNode->next = nodePtr->next;
+
+		
+		if (nodePtr->next) {
+			newNode->next->prev = newNode;
 		}
-		newNode->prev = nodePtr;
 		nodePtr->next = newNode;
+		newNode->prev = nodePtr;
 	}
+
+
+		
 
 }
 void DoubleLinkedList::merge(DoubleLinkedList* absorbedList) {
@@ -40,7 +53,6 @@ void DoubleLinkedList::merge(DoubleLinkedList* absorbedList) {
 	
 	
 }
-
 void DoubleLinkedList::remove(int value) {
 	node* nodePtr = new node;
 	nodePtr = head;
